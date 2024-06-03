@@ -7,9 +7,9 @@ mdona:
       location: europe-west1
       method: oauth
       priority: interactive
-      project: mdona-data-dev-silver #esto hay que poner el nombre de nuestro proyecto
+      project: bq-mercadona #esto hay que poner el nombre de nuestro proyecto
       threads: 12
       type: bigquery
-      execution_project: mdona-data-dev-processing #revisar si se quiere este nombre
+#      execution_project: mdona-data-dev-processing #revisar si se quiere este nombre
 
   target: dev
