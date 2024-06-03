@@ -24,14 +24,33 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "dbt_packages"
 
 
+vars:
+  DBT_NODEV_ENVS: ['pro','pre','itg']
+  FORCE_CONTRACT_ENVS: []
+
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
 # In this example config, we tell dbt to build all models in the example/
 # directory as views. These settings can be overridden in the individual model
 # files using the `{{ config(...) }}` macro.
+
 models:
   dbt_core_gold_employee_workforce:
     # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+
+############### MARTS ###############
+    marts:
+      +database: "mdona-data-{{target.name}}-gold"
+      +materialized: table
+      +docs:
+        node_color: gold
+      
+      employee_workforce:
+        +schema: "store_workforce" #revisar si se quiere este nombre
+        +tags:
+          - "employeeworkforce" #revisar si se quiere este nombre
+          - "gold"
+        +labels:
+          layer: gold
+          cu: workforce
