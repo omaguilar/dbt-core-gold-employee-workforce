@@ -7,7 +7,7 @@ version: '1.0.0'
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
-profile: 'dbt_core_gold_employee_workforce'
+profile: 'mdona'
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
@@ -41,7 +41,7 @@ models:
 
 ############### MARTS ###############
     marts:
-      +database: "mdona-data-{{target.name}}-gold"
+      +database: "bq-mercadona" # cambiarlo en un futuro por "mdona-data-{{target.name}}-gold"
       +materialized: table
       +docs:
         node_color: gold
@@ -53,4 +53,21 @@ models:
           - "gold"
         +labels:
           layer: gold
+          cu: workforce
+
+  ############### STAGING ###############        
+    staging:
+      +database: "bq-mercadona" # cambiarlo en un futuro por "mdona-data-{{target.name}}-gold"
+      +materialized: table
+      +docs:
+        node_color: silver
+
+      employee_workforce:
+        +schema: "stg_store_workforce"
+        +materialized: table
+        +tags:
+          - "employeeworkforce" #revisar si se quiere este nombre
+          - "silver"
+        +labels:
+          layer: silver
           cu: workforce

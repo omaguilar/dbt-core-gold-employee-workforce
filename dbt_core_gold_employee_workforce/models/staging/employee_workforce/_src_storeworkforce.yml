@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: storeworkforce
+    database: bq-mercadona
+    schema: app_eis_lnd
+    tables:
+      - name: SA_MOT_CAUDALES_PA_SEMANA
+      - name: SA_MOT_HORARIOS_TIENDA
+      - name: SA_MOT_MAESTRA_TEMPORAL

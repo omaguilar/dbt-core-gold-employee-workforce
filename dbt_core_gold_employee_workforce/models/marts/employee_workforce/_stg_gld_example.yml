@@ -1,15 +1,24 @@
 version: 2
 
 models:
-  - name: my_first_dbt_model
-    description: "A starter dbt model"
+  - name: SA_MOT_MAESTRA_TEMPORAL 
+    description: "tabla temporal"
     
     columns:
-      - name: id
-        description: "The primary key for this table"
+      - name: anno
+        description: "descripcion1"
 
-  - name: my_second_dbt_model
-    description: "A starter dbt model"
-    columns:
-      - name: id
-        description: "The primary key for this table"
+      - name: mes
+        description: "descripcion2"
+
+      - name: semana
+        description: "descripcion3"
+
+      - name: fecha
+        description: "descripcion4"
+
+      - name: etiqueta_semana
+        description: "descripcion5"
+
+      - name: cod_semana_anno_ant
+        description: "descripcion6"
