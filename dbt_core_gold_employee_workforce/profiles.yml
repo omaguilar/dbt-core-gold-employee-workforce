@@ -1,0 +1,15 @@
+mdona:
+  outputs:
+    dev:
+      dataset: aan
+      job_execution_timeout_seconds: 300
+      job_retries: 2
+      location: europe-west1
+      method: oauth
+      priority: interactive
+      project: mdona-data-dev-silver #esto hay que poner el nombre de nuestro proyecto
+      threads: 12
+      type: bigquery
+      execution_project: mdona-data-dev-processing #revisar si se quiere este nombre
+
+  target: dev
